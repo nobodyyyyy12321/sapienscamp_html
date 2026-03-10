@@ -12,8 +12,9 @@
    --input-fg: #fff;
    --input-border: #fff;
    --subtitle: #7c8a7c;
+   --feedback-color: #fff;
  }
- body.light {
+body.light {
    --bg: #fff;
    --fg: #181818;
    --border: #bbb;
@@ -27,6 +28,7 @@
    --input-fg: #181818;
    --input-border: #bbb;
    --subtitle: #7c8a7c;
+   --feedback-color: #222;
  }
 body {
   background: var(--bg);
