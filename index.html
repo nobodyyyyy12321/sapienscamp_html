@@ -152,13 +152,13 @@
     <a href="index.html" class="logo-link" style="display:inline-block;width:48px;height:48px;background:transparent;">
       <img src="logo-removebg-preview.png" alt="logo" id="logo-img" style="width:60px;height:60px;display:block;margin:4px auto;background:transparent;border-radius:8px;" />
     </a>
-    <div id="bulb-svg">
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="24" cy="24" r="14" fill="#FFD600" stroke="#bbb" stroke-width="2"/>
-        <rect x="20" y="34" width="8" height="8" rx="2" fill="#bbb"/>
-        <rect x="22" y="42" width="4" height="4" rx="1" fill="#bbb"/>
-      </svg>
-    </div>
+  </div>
+  <div id="bulb-center" style="position:absolute;left:18vw;top:50vh;transform:translateY(-50%) rotate(180deg);cursor:pointer;z-index:30;">
+    <svg id="bulbSVG" width="80" height="80" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle id="bulbCircle" cx="24" cy="24" r="14" fill="#FFD600" stroke="#bbb" stroke-width="2"/>
+      <rect x="20" y="34" width="8" height="8" rx="2" fill="#bbb"/>
+      <rect x="22" y="42" width="4" height="4" rx="1" fill="#bbb"/>
+    </svg>
   </div>
   <div class="top-bar" style="display:flex;align-items:center;gap:16px;position:absolute;right:32px;top:24px;z-index:30;">
     <select class="lang-select" style="min-width:120px;padding:6px 18px;border-radius:8px;border:1.5px solid var(--border);background:var(--btn-bg);color:var(--btn-fg);font-size:1rem;">
@@ -299,14 +299,23 @@
       if (isLight) {
         speakerImg.style.filter = 'invert(0) brightness(0)';
         logoImg.style.filter = 'invert(0) brightness(0)';
+        document.getElementById('bulbCircle').setAttribute('fill', '#FFD600');
       } else {
         speakerImg.style.filter = '';
         logoImg.style.filter = '';
+        document.getElementById('bulbCircle').setAttribute('fill', '#FFF');
       }
     }
     setImageColorByMode();
     // Listen for mode changes
     const observer = new MutationObserver(setImageColorByMode);
     observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+    // 點擊燈泡切換亮暗模式
+    document.getElementById('bulb-center').addEventListener('click', function() {
+      const isLight = document.body.classList.toggle('light');
+      localStorage.setItem('themeMode', isLight ? 'light' : 'dark');
+      setImageColorByMode();
+    });
   </script>
 </html>
