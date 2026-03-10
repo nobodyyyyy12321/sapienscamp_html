@@ -1,0 +1,78 @@
+<!-- Use layout.html as template -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公職考試 - 智人題庫</title>
+  <link rel="stylesheet" href="theme.css">
+  <script src="bulb-toggle.js"></script>
+  <style>
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .exam-btn {
+      display: inline-block;
+      background: var(--btn-bg);
+      color: var(--btn-fg);
+      border: 2px solid var(--btn-border);
+      border-radius: 12px;
+      padding: 0.8rem 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header style="display:flex;align-items:center;justify-content:space-between;padding:1rem;">
+    <img src="logo.png" alt="Sapiens Camp Logo" style="height:40px;">
+    <div id="bulb-container"></div>
+  </header>
+  <main class="main">
+    <div class="title">公職考試 - 智人題庫</div>
+    <div class="btn-group">
+      <a class="exam-btn" href="exam_bank.html">國考題庫</a>
+      <a class="exam-btn" href="index.html">回首頁</a>
+    </div>
+  </main>
+</body>
+</html>
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border 0.2s;
+      text-decoration: none;
+      text-align: center;
+    }
+    .exam-btn:hover {
+      background: var(--btn-hover-bg);
+      color: var(--btn-hover-fg);
+      border-color: var(--btn-hover-border);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .btn-group {
+        gap: 1rem;
+      }
+      .exam-btn {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+      }
+      .title {
+        font-size: 2rem;
+        margin-top: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="title">公職考試</div>
+  <div class="btn-group">
+    <a class="exam-btn" href="under_construction.html">初等考試</a>
+    <a class="exam-btn" href="under_construction.html">高普考</a>
+    <a class="exam-btn" href="under_construction.html">地方特考</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+ :root {
+   --bg: #181818;
+   --fg: #fff;
+   --border: #fff;
+   --btn-bg: #181818;
+   --btn-fg: #fff;
+   --btn-border: #fff;
+   --btn-hover-bg: #fff;
+   --btn-hover-fg: #181818;
+   --btn-hover-border: #181818;
+   --input-bg: #181818;
+   --input-fg: #fff;
+   --input-border: #fff;
+   --subtitle: #7c8a7c;
+ }
+ body.light {
+   --bg: #fff;
+   --fg: #181818;
+   --border: #bbb;
+   --btn-bg: #fff;
+   --btn-fg: #181818;
+   --btn-border: #181818;
+   --btn-hover-bg: #181818;
+   --btn-hover-fg: #fff;
+   --btn-hover-border: #ffd600;
+   --input-bg: #fff;
+   --input-fg: #181818;
+   --input-border: #bbb;
+   --subtitle: #7c8a7c;
+ }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Noto Sans TC', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
